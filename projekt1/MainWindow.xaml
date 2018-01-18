@@ -1,0 +1,69 @@
+﻿<Window x:Class="projekt1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekt1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <TabControl>
+        <TabItem Header="Bmi">
+            <Grid x:Name="BMI" RenderTransformOrigin="0.469,0.379" Height="325" Margin="0,0,-5,-2.2" VerticalAlignment="Bottom" MinHeight="325">
+
+
+
+
+                <Label Content="Kalkulator Bmi" HorizontalAlignment="Left" Margin="187,6,0,0" VerticalAlignment="Top" FontSize="20" Height="36" Width="162" RenderTransformOrigin="0.495,0.447"/>
+                <Label Content="Wybierz płeć:" HorizontalAlignment="Left" Margin="8,56,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="KobietaBT" Content="Kobieta" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" />
+                <RadioButton x:Name="MezczyznaBT" Content="Mężczyzna" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" />
+                <Label Content="Podaj swoją wagę:" HorizontalAlignment="Left" Margin="11,127,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="TXBWAGA" HorizontalAlignment="Left" Height="23" Margin="13,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Cursor="Arrow"/>
+                <Label Content="Podaj swój wzrost:" HorizontalAlignment="Left" Margin="11,185,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="TXBWZR" HorizontalAlignment="Left" Height="23" Margin="13,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" />
+                <Button Content="Sprawdź BMI" HorizontalAlignment="Left" Margin="16,262,0,0" VerticalAlignment="Top" Width="112" Height="36" Click="Button_Click"/>
+                <TextBlock HorizontalAlignment="Left" Margin="160,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="226" Width="120"><Run Text="do 16: wygłodzenie"/><LineBreak/><Run Text="od 16 do 17: wychudzenie"/><LineBreak/><Run Text="od 17 do 18.5: niedowaga"/><LineBreak/><Run Text="od 18.5 do 25: wartość prawidłowa"/><LineBreak/><Run Text="od 25 do 30: nadwaga"/><LineBreak/><Run Text="od 30 do 35: I stopień otyłości"/><LineBreak/><Run Text="od 35 do 40: II stopień otyłości"/><LineBreak/><Run Text="powyżej 40: III stopień otyłości"/></TextBlock>
+                <Label Content="Wskaźnik BMI:" HorizontalAlignment="Left" Margin="155,44,0,0" VerticalAlignment="Top"/>
+                <ListBox x:Name="listbmi" HorizontalAlignment="Left" Height="194" Margin="323,72,0,0" VerticalAlignment="Top" Width="169"/>
+                <Button x:Name="DodajBMI" Content="ZapiszBMI" HorizontalAlignment="Left" Margin="323,283,0,0" VerticalAlignment="Top" Width="75" Click="DodajBMI_Click"/>
+                <Button x:Name="ClearData" Content="Wyczyść" HorizontalAlignment="Left" Margin="417,283,0,0" VerticalAlignment="Top" Width="75" Click="ClearData_Click"/>
+                <Label Content="Ostatnie Dane BMI:" HorizontalAlignment="Left" Margin="347,44,0,0" VerticalAlignment="Top" Width="123"/>
+
+
+
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Zapotrzebowanie kaloryczne">
+            <Grid x:Name="Zapotrzebowanie" RenderTransformOrigin="0.469,0.379" Height="325" Margin="0,0,-5,-2.2" VerticalAlignment="Bottom" MinHeight="325">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="311*"/>
+                    <ColumnDefinition Width="208*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Oblicz swoje dzienne zapotrzebowanie kaloryczne" HorizontalAlignment="Left" Margin="118,30,0,0" VerticalAlignment="Top" Width="274" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="TXBWIEK" HorizontalAlignment="Left" Height="23" Margin="9,83,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96" />
+                <TextBox x:Name="TXBWAGA2" HorizontalAlignment="Left" Height="23" Margin="9,138,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="96"/>
+                <TextBox x:Name="TXBWZROST" HorizontalAlignment="Left" Height="23" Margin="9,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+                <Label Content="Wiek:" HorizontalAlignment="Left" Margin="19,54,0,0" VerticalAlignment="Top" Width="49" Height="26"/>
+                <Label Content="Waga" HorizontalAlignment="Left" Margin="19,110,0,0" VerticalAlignment="Top"/>
+                <Label Content="Wzrost" HorizontalAlignment="Left" Margin="19,163,0,0" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="279,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="181" Width="217" Grid.ColumnSpan="2"><Run Text="Kalkulator kalorii umożliwia szybkie i wygodne wyliczenie własnego dziennego zapotrzebowania na kalorie oraz poznanie wskaźnika BMR. Wskaźnik podstawowej przemiany materii (Basal Metabolic Rate, BMR) jest "/><Run Text="minimalnym dziennym "/><Run Text="zapotrzebowaniem "/><Run Text="energetycznym koniecznym do podtrzymania podstawowych procesów życiowych ciała w spoczynku."/></TextBlock>
+                <RadioButton x:Name="MalaAk" Content="Mała aktywność(ćwiczenia 1-3 tygodniowo)" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="BardzoDuzaAk" Content="Bardzo duża aktywność fizyczna" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.702,-0.408"/>
+                <RadioButton x:Name="DuzaAk" Content="Duża aktywność fizyczna(ćwiczenie codziennie)" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="SredniaAk" Content="Średnia aktywność(ćwiczenia 3-5 tygodniowo)" HorizontalAlignment="Left" Margin="10,259,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="BrakAk" Content="Brak aktywności" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top"/>
+                <Button Content="Oblicz zapotrzebowanie" HorizontalAlignment="Left" Margin="20.2,268,0,0" VerticalAlignment="Top" Width="138" Height="39" Click="Button_Click_1" Grid.Column="1"/>
+                <Canvas Margin="133,69,65.8,199">
+                    <Canvas Height="61" Width="112">
+                        <StackPanel Orientation="Vertical" Width="112">
+                            <StackPanel Orientation="Vertical"/>
+                        </StackPanel>
+                        <RadioButton x:Name="KobietaZap" Content="Kobieta" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="30"/>
+                        <RadioButton x:Name="MezczyznaZap" Content="Mężczyzna" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="10" Canvas.Top="10" />
+                    </Canvas>
+                </Canvas>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
